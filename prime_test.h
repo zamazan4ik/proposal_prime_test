@@ -31,10 +31,10 @@ namespace experimental
 template <typename T>
 bool is_prime(T num) noexcept
 {
-    T j=std::sqrt(static_cast<double>(n));
+    T j = std::sqrt(static_cast<double>(num));
     for(T i = 2; i <= j; ++i)
     {
-        if(n % i == 0)
+        if(num % i == 0)
         {
             return false;
         }
@@ -45,7 +45,7 @@ bool is_prime(T num) noexcept
 template <typename T>
 bool is_probable_prime(T num) noexcept
 {
-    
+
 }
 
 }
