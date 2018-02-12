@@ -1,0 +1,83 @@
+<HTML><HEAD><TITLE>TODO, Proposal for Prime test functions</TITLE></HEAD><BODY>
+
+<CENTER>
+<H1><A NAME="TODO, Proposal for prime test functions">Proposal for Prime test functions</A></H1>
+</CENTER>
+
+<TABLE ALIGN="RIGHT" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD ALIGN="RIGHT"><B><I>Document number:</I></B></TD>
+<TD>&nbsp; TODO</TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT"><B><I>Date:</I></B></TD>
+<TD>&nbsp; TODO</TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT"><B><I>Project:</I></B></TD>
+<TD>&nbsp; Programming Language C++</TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT"><B><I>Reference:</I></B></TD>
+<TD>&nbsp; ISO/IEC IS 14882:TODO(E)</TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT"><B><I>Reply to:</I></B></TD>
+<TD>&nbsp; Alexander Zaitsev</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD>&nbsp; Solarwinds</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD>&nbsp; zamazan4ik@tut.by</TD>
+</TR>
+</TABLE>
+<BR CLEAR="ALL">
+
+<HR>
+
+<H2><A NAME="Overview">Overview</A></H2>
+
+<p>Programmers sometimes need to check whether the number is prime or not. This task is especially common in cryptography. 
+This proposal suggests extending the set of mathematical functions with functions to check whether the number is prime or not.</p>
+
+<H2><A NAME="Design overview">Design overview</A></H2>
+
+<p>This paper proposes two prime-test functions.
+
+<H2><A NAME="cmath">Header <code>&lt;cmath&gt;</code>
+synopsis</A></H2>
+
+<pre><code>namespace std {
+namespace experimental {
+
+bool is_prime(Integral value) noexcept;
+
+bool is_probable_prime(Integral value, Integral certainty) noexcept;
+
+} /* namespace experimental */
+} /* namespace std */
+</code></pre>
+
+<B><A NAME="std::is_prime">is_prime</A></B>
+
+<code><pre>bool <b>is_prime</b>(Integral value) noexcept;
+</pre></code>
+
+<p>The function tests is a value prime or not. If a value is prime, returns true. Otherwise, false.</p>
+<p>Complexity: O(sqrt(N)).</p>
+
+<B><A NAME="std::is_probable_prime">is_probable_prime</A></B>
+
+<code><pre>bool <b>is_probable_prime</b>(Integral value, Integral certainty) noexcept;
+</pre></code>
+
+<b>Parameters</b>:
+<p>certainty - a measure of the uncertainty that the caller is willing to tolerate: if the call returns true the probability that value is prime exceeds (1 - 1/2^certainty).</p>
+
+<p>Returns true if value is probably prime, false if it's definitely composite. If certainty is <= 0, true is returned.</p>
+<p>Complexity: TODO</p>
+
+</BODY></HTML>
